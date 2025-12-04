@@ -76,4 +76,23 @@ public class lineasEspera {
         System.out.println("Tiempo promedio en la cola (Wq): " + Wq);
         System.out.println("Tiempo promedio en el sistema (W): " + W);
     }
+
+    public static void modelommc(double lambda, double mu, int c) {
+        double P = lambda / (c * mu);
+        double a = lambda / mu;
+        double sum = 0;
+        for (int n = 0; n < c; n++) {
+            sum += Math.pow(a, n) / factorial(n);
+        }
+        double P0 = 1.0 / (sum + (Math.pow(a, c) / (factorial(c) * (1 - P))));
+
+    }
+
+    public static int factorial(int n) {
+        if (n == 0 || n == 1) {
+            return 1;
+        } else {
+            return n * factorial(n - 1);
+        }
+    }
 }
