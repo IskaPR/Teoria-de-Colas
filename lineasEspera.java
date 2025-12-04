@@ -20,6 +20,7 @@ public class lineasEspera {
                 lambda = scanner.nextDouble();
                 System.out.println("Ingrese la tasa de servicio (μ): ");
                 mu = scanner.nextDouble();
+                modeloMM1(lambda, mu);
                 break;
             case 2:
                 System.out.println("Ha seleccionado el modelo M/M/c");
@@ -29,6 +30,7 @@ public class lineasEspera {
                 mu = scanner.nextDouble();
                 System.out.println("Ingrese el numero de servidores (c): ");
                 c = scanner.nextInt();
+                modelommc(lambda, mu, c);
                 break;
             case 3:
                 System.out.println("Ha seleccionado el modelo M/M/1/K");
@@ -38,6 +40,7 @@ public class lineasEspera {
                 mu = scanner.nextDouble();
                 System.out.println("Ingrese la capacidad del sistema (K): ");
                 K = scanner.nextInt();
+                modelomm1k(lambda, mu, K);
                 break;
         }
 
