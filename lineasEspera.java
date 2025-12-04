@@ -58,4 +58,22 @@ public class lineasEspera {
         System.out.println("Tiempo promedio en la cola (Wq): " + Wq);
         System.out.println("Tiempo promedio en el sistema (W): " + W);
     }
+
+    public static void modelomm1k(double lambda, double mu, int K) {
+        double p = lambda / mu;
+        double P0 = (1 - p) / (1 - Math.pow(p, K + 1));
+        double PK = P0 * Math.pow(p, K);
+        double L = (p * (1 - (K + 1) * Math.pow(p, K) + K * Math.pow(p, K + 1))) / ((1 - p) * (1 - Math.pow(p, K + 1)));
+        double Lq = L - (1 - PK);
+        double W = L / (lambda * (1 - PK));
+        double Wq = W - (1 / mu);
+        System.out.println("\n\n\t Resultados del modelo M/M/1/K:");
+        System.out.println("Utilizacion del sistema (p): " + p);
+        System.out.println("Probabilidad de que el sistema esté vacío (P0): " + P0);
+        System.out.println("Probabilidad de que el sistema esté lleno (PK): " + PK);
+        System.out.println("Numero promedio de clientes en la cola (Lq): " + Lq);
+        System.out.println("Numero promedio de clientes en el sistema (L): " + L);
+        System.out.println("Tiempo promedio en la cola (Wq): " + Wq);
+        System.out.println("Tiempo promedio en el sistema (W): " + W);
+    }
 }
